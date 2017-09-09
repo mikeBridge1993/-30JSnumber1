@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Michael's Bridge Ultimate Playlist Memorabilia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">METALLICA</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">NETSKY</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">MEGADETH</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">LUIS FONSI</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">DEEP PURPLE</span>
+    </div>
+   
+  </div>
+
+  <audio data-key="65" src="sounds/master.mp3"></audio>
+  <audio data-key="83" src="sounds/netsky.mp3"></audio>
+  <audio data-key="68" src="sounds/megadeth.mp3"></audio>
+  <audio data-key="70" src="sounds/fonsi.mp3"></audio>
+  <audio data-key="71" src="sounds/deeppurple.mp3"></audio>
+
+    
+   
+  
+
+<script>
+    window.addEventListener('keydown', function(e){
+       
+    var sounds = document.getElementsByTagName('audio');
+    for(i=0; i<sounds.length; i++) sounds[i].pause();
+    
+                            
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+
+    const all = document.querySelector('html')
+    switch (e.keyCode) {
+        case 65:
+            all.style.backgroundImage= "url(images/master.jpg)";
+            classString = 'master'
+            break;
+        case 83:
+            all.style.backgroundImage= "url(images/netsky.jpg)";
+            classString = "netsky"
+            break;
+        case 68:
+            all.style.backgroundImage= "url(images/megadeth.jpg)";
+            classString = "megadeth"
+            break;
+        case 70:
+            all.style.backgroundImage= "url(images/luisfonsi.jpg)";
+            classString = "fonsi"
+            break;
+        case 71:
+            all.style.backgroundImage= "url(images/deeppurple.jpg)";
+            classString = "deeppurple"
+            break;
+                     }
+    
+    all.style.backgroundSize= "contain";
+    all.style.backgroundRepeat= "no-repeat";
+    all.style.backgroundPosition= "center center";
+        
+   
+    if (!audio)
+        return;
+    audio.pause();
+    audio.currentTime=0;
+    audio.play();
+    
+    key.classList.add(classString)
+    console.log(key.classList)
+});
+    
+    
+    
+    function removeTransition(e)
+    {
+      if(e.propertyName !== 'transform') return;
+        this.classList.remove(classString);
+    }
+    const keys = document.querySelectorAll('.key');   
+
+    keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+    
+</script>
+
+
+</body>
+</html>

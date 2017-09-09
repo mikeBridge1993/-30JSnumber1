@@ -1,0 +1,78 @@
+html {
+  font-size: 10px;
+    background-image: url(images/master.jpg);
+    background-size: contain;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.key {
+  border: .4rem solid black;
+  border-radius: .5rem;
+  margin: 0.3rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s ease;
+  width: 10rem;
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.9);
+  text-shadow: 0 0 .5rem black;
+}
+
+.master  {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
+.megadeth {
+  transform: scale(1.1);
+  border-color: darkblue;
+  box-shadow: 0 0 1rem darkblue;
+}
+
+.netsky {
+    transform: scale(1.1);
+    border-color: grey;
+    box-shadow: 0 0 1rem grey;
+}
+
+.fonsi {
+    transform: scale(1.1);
+    border-color: whitesmoke;
+    box-shadow: 0 0 1rem whitesmoke;
+}
+
+.deeppurple {
+    transform: scale(1.1);
+    border-color: purple;
+    box-shadow: 0 0 1rem purple;
+}
+
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
